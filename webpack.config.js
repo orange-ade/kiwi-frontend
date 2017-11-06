@@ -19,6 +19,11 @@ module.exports = {
                         'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
                     }
                 }
+            },
+            {
+                test: /\.js$/,
+                loader : 'babel-loader',
+                exclude: [/node_modules/],
             }
         ]
     },
