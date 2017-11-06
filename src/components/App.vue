@@ -1,8 +1,9 @@
 <template>
     <div id="app">
-        <h1>{{count}}</h1>
-        <button v-on:click="increment">+</button>
-        <button v-on:click="decrement">-</button>
+        <div v-for="queue in queues">
+	    <h1>{{ queue.name }}</h1>
+	    <p>{{ queue.priority }}</p>
+	</div>
     </div>
 </template>
 
@@ -10,7 +11,7 @@
     import { mapState, mapGetters, mapActions } from 'vuex'
     export default {
         computed : mapState([
-            'count'
+            'queues'
         ]),
         methods: {
             ...mapActions([
