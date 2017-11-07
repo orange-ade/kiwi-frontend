@@ -1,18 +1,22 @@
 <template>
     <div id="app">
-        <div v-for="queue in queues">
-	    <h1>{{ queue.name }}</h1>
-	    <p>{{ queue.priority }}</p>
-	</div>
+        <MainPanel :entry="currentEntry.entry" :queue="currentEntry.queue"/>
+        <div class="cards-list">
+            <Card v-for="queue in queues" :key="queue.name" :title="queue.name" :priority="queue.priority"></Card>
+        </div>
     </div>
+
 </template>
 
 <script>
     import { mapState, mapGetters, mapActions } from 'vuex'
+    import Card from './Card.vue';
+    import MainPanel from './MainPanel.vue';
     export default {
         computed : mapState([
-            'queues'
+            'queues', 'currentEntry'
         ]),
+        components: { Card, MainPanel },
         methods: {
             ...mapActions([
                 'increment',
@@ -22,10 +26,7 @@
     }
 </script>
 
-<style lang="scss">
-    $color : black;
-    h1{
-        color: $color;
-        background-color: lightyellow;
-    }
+<style lang="stylus" scoped>
+    .cards-list
+        display: flex
 </style>

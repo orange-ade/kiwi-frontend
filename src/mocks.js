@@ -1,23 +1,28 @@
 export const queues = [
   {
     "id": "1",
-    "name": "atendimento 1",
+    "name": "queue 1",
     "priority": 1,
-    "description": "atendimento de usuários",
+    "description": "queue3",
     "active": true
   },
   {
     "id": "2",
-    "name": "atendimento 3",
+    "name": "queue 3",
     "priority": 1,
-    "description": "atendimento de usuários 3",
+    "description": "queue3",
     "active": true
   },
   {
     "id": "3",
-    "name": "atendimento 5",
+    "name": "queue 5",
     "priority": 2,
-    "description": "atendimento de usuários 5",
+    "description": "queue5",
     "active": true
   }
  ];
+
+ export const currentEntry = {
+   "entry": '372',
+   "queue": 'queue1'
+ };

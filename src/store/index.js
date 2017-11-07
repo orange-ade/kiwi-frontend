@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { queues } from '../mocks';
+import { queues, currentEntry } from '../mocks';
 
 Vue.use(Vuex)
 
-const state = { queues };
+const state = { queues, currentEntry };
 
 const mutations = {
     increment (state) {
