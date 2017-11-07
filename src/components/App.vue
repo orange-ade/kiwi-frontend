@@ -1,22 +1,20 @@
 <template>
     <div id="app">
         <MainPanel :entry="currentEntry.entry" :queue="currentEntry.queue"/>
-        <div class="cards-list">
-            <Card v-for="queue in queues" :key="queue.name" :title="queue.name" :priority="queue.priority"></Card>
-        </div>
+        <CardList :queues="queues" />
     </div>
 
 </template>
 
 <script>
     import { mapState, mapGetters, mapActions } from 'vuex'
-    import Card from './Card.vue';
+    import CardList from './CardList.vue';
     import MainPanel from './MainPanel.vue';
     export default {
         computed : mapState([
             'queues', 'currentEntry'
         ]),
-        components: { Card, MainPanel },
+        components: { CardList, MainPanel },
         methods: {
             ...mapActions([
                 'increment',
