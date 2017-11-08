@@ -12,19 +12,25 @@
     import MainPanel from './MainPanel.vue';
     export default {
         computed : mapState([
-            'queues', 'currentEntry'
+        'queues', 'currentEntry'
         ]),
         components: { CardList, MainPanel },
         methods: {
             ...mapActions([
-                'increment',
-                'decrement'
+            'increment',
+            'decrement'
             ])
         }
     }
 </script>
 
-<style lang="stylus" scoped>
-    .cards-list
-        display: flex
+<style lang="stylus">
+    body
+        font-family: 'Ubuntu Mono', cursive
+        margin: 0
+        overflow: hidden
+
+    #app
+      display: flex
+      height: 100vh
 </style>
